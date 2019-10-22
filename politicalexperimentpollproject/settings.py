@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'g86shyrg#u9p#=kdvgc_$f5wgtvo96v4d)go4qkflyrmlu+m9!'
 
@@ -20,19 +23,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
-WSGI_APPLICATION = 'politicalexperimentpollproject.wsgi.application' 
-
 # Application definition
 
 INSTALLED_APPS = [
     'politicalexperimentpollapp.apps.PoliticalexperimentpollappConfig',
-    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +63,8 @@ TEMPLATES = [
         },
     },
 ]
+
+WSGI_APPLICATION = 'politicalexperimentpollproject.wsgi.application' 
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -111,16 +114,5 @@ USE_L10N = True
 USE_TZ = True
 
 
-# STATIC ASSETS
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = '/Users/Jamie/politicalexperimentpoll/politicalexperimentpollapp/static'
 STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'politicalexperimentpollapp/static'),
-)
