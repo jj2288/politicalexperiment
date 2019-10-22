@@ -1,0 +1,9 @@
+ul
+{
+list-style-type: none;
+}
+span {
+    display: block;
+    margin-top: -16px;
+    margin-left: 28px;
+  }
